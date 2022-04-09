@@ -1,9 +1,11 @@
-export default class MomentAdapter implements DateTime {
-    addDays(date: Date, amount: Date): Date {
-        return undefined;
-    }
+import moment from "moment";
+import type DateTime from "./DateTime";
 
-    isSameDay(dateLeft: Date, dateRight: Date): boolean {
-        return false;
-    }
+export default class MomentAdapter implements DateTime {
+  addDays(date: Date, amount: number): Date {
+    return moment(date).add(amount, "days").toDate();
+  }
+  isSameDay(dateLeft: Date, dateRight: Date): boolean {
+    return moment(dateLeft).isSame(dateRight, "days");
+  }
 }

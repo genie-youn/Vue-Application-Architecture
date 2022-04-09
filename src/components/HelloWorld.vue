@@ -1,12 +1,16 @@
 <script setup lang="ts">
+import { ref } from "vue";
+import { addDays } from "@/libs/date-time";
+
 defineProps<{
-  msg: string
-}>()
+  msg: string;
+}>();
+const test = ref(`할라할라: ${addDays(new Date(), 7)}`);
 </script>
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+    <h1 class="green">{{ test }}</h1>
     <h3>
       You’ve successfully created a project with
       <a target="_blank" href="https://vitejs.dev/">Vite</a> +

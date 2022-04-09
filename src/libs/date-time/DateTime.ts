@@ -1,8 +1,4 @@
-import MomentAdapter from "@/libs/date-time/MomentAdapter";
-
-interface DateTime {
+export default interface DateTime {
   isSameDay(dateLeft: Date, dateRight: Date): boolean;
-  addDays(date: Date, amount: Date): Date;
+  addDays(date: Date, amount: number): Date;
 }
-
-export default new MomentAdapter() as DateTime;
